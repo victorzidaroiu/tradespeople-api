@@ -1,4 +1,4 @@
-# Tradesperson Jobs API
+# Tradespeople Jobs API
 
 ## Requirements
 
