@@ -1,0 +1,42 @@
+type Query {
+  findJobsInRange(tradespersonId: Int): FindJobsResponse
+}
+
+type Mutation {
+  addTradesperson(input: AddTradespersonInput): AddTradespersonResponse
+  addJob(input: AddJobInput): AddJobResponse
+}
+
+type FindJobsResponse {
+  success: Boolean,
+  jobs: [Job]
+}
+
+type Job {
+  description: String!,
+  latitude: Float,
+  longitude: Float
+}
+
+input AddTradespersonInput {
+  name: String!, 
+  latitude: Float!,
+  longitude: Float!
+}
+
+input AddJobInput {
+  description: String!, 
+  latitude: Float!,
+  longitude: Float!,
+  maxTradespersonDistance: Float!
+}
+
+type AddTradespersonResponse {
+  success: Boolean,
+  tradespersonId: Int
+}
+
+type AddJobResponse {
+  success: Boolean,
+  jobId: Int
+}
